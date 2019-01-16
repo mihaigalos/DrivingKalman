@@ -11,7 +11,7 @@ class SyntheticData:
         max = 70
         self.t = np.linspace(0, max, max / dt)
 
-        accX_var_best = 0.0005
+        accX_var_best = 0.0005  # meters / second ^ 2
         accX_var_good = 0.0007
         accX_var_worst = 0.001
 
@@ -45,21 +45,19 @@ class SyntheticData:
         axarr[0].plot(self.t, self.accX_ref, "g-", label="Ground Truth")
         axarr[0].plot(self.t, self.accX_good, "b-", label="Good")
         axarr[0].plot(self.t, self.accX_worst, "r-", label="Worst")
-        axarr[0].set_title('Acceleration X')
+        axarr[0].set_title('Acceleration X [m/s^2]')
         axarr[0].grid()
-        axarr[0].legend()
 
         axarr[1].plot(self.t, self.velX_ref, "g-", label="Ground Truth")
         axarr[1].plot(self.t, self.velX_good, "b-", label="Good")
         axarr[1].plot(self.t, self.velX_worst, "r-", label="Worst")
-        axarr[1].set_title('Velocity X')
+        axarr[1].set_title('Velocity X [m/s]')
         axarr[1].grid()
-        axarr[1].legend()
 
         axarr[2].plot(self.t, self.distX_ref, "g-", label="Ground Truth")
         axarr[2].plot(self.t, self.distX_good, "b-", label="Good")
         axarr[2].plot(self.t, self.distX_worst, "r-", label="Worst")
-        axarr[2].set_title('Position X')
+        axarr[2].set_title('Position X [m]')
         axarr[2].grid()
         axarr[2].legend()
 
