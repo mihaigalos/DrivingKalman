@@ -47,6 +47,7 @@ class SyntheticData:
         axarr[0].plot(self.t, self.accX_worst, "r-", label="Worst")
         axarr[0].set_title('Acceleration X [m/s^2]')
         axarr[0].grid()
+        axarr[0].legend()
 
         axarr[1].plot(self.t, self.velX_ref, "g-", label="Ground Truth")
         axarr[1].plot(self.t, self.velX_good, "b-", label="Good")
@@ -59,7 +60,9 @@ class SyntheticData:
         axarr[2].plot(self.t, self.distX_worst, "r-", label="Worst")
         axarr[2].set_title('Position X [m]')
         axarr[2].grid()
-        axarr[2].legend()
+
+        mng = plt.get_current_fig_manager()
+        mng.resize(*mng.window.maxsize())
 
         plt.show()
 
